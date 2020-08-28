@@ -174,6 +174,7 @@
 			<xsd:element name="connectionSource" minOccurs="0" maxOccurs="1" type="ConnectionSource"/>
 			<xsd:element name="triggeringPolicy" minOccurs="0" maxOccurs="1" type="TriggeringPolicy"/>
 			<xsd:element name="appender-ref" minOccurs="0" maxOccurs="1" type="AppenderRef"/>
+            <xsd:element name="destination" minOccurs="0" maxOccurs="1" type="Destination"/>
 			<xsd:any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
@@ -187,6 +188,12 @@
 			<xsd:enumeration value="System.err"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+
+    <xsd:simpleType name="Destination">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value=".*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
 	<xsd:complexType name="Filter">
 		<xsd:choice maxOccurs="unbounded">
@@ -252,8 +259,8 @@
 			<xsd:element name="pattern" type="xsd:string" minOccurs="0" maxOccurs="1"/>
 		</xsd:choice>
 		<xsd:attribute name="class" type="xsd:string" use="optional"
-					   default="ch.qos.logback.classic.encoder.PatternLayoutEncoder"
-		/>
+					   default="ch.qos.logback.classic.encoder.PatternLayoutEncoder"/>
+        <xsd:attribute name="charset" type="xsd:string" use="optional"/>
 	</xsd:complexType>
 
 	<xsd:complexType name="Root">
