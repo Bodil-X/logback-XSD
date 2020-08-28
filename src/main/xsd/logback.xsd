@@ -190,9 +190,7 @@
 	</xsd:simpleType>
 
     <xsd:simpleType name="Destination">
-        <xsd:restriction base="xsd:string">
-            <xsd:pattern value=".*"/>
-        </xsd:restriction>
+        <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
 
 	<xsd:complexType name="Filter">
@@ -217,9 +215,7 @@
     </xsd:complexType>
 
     <xsd:simpleType name="Expression">
-        <xsd:restriction base="xsd:string">
-            <xsd:pattern value=".*"/>
-        </xsd:restriction>
+        <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
 
 	<xsd:simpleType name="MatchValue">
